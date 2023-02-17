@@ -9,7 +9,8 @@ from sklearn.metrics import confusion_matrix, classification_report
 
 img_height=64
 img_width=64
-test_path = "testdataset/"
+#test_path = "testdataset/"
+test_path = "testdataset2/"
 num_of_classes = 29
 
 
@@ -33,7 +34,7 @@ for i in dir_list:
     test_image = img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis = 0)
     result = model.predict(test_image)
-    #print("predicted: "+class_names[np.argmax(result)]+", actual: "+i.split('_')[0])
+    print(i+" predicted: "+class_names[np.argmax(result)]+", actual: "+i.split('_')[0])
 
     pred.append(class_names[np.argmax(result)])
 
